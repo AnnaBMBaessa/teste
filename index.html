@@ -9,26 +9,24 @@
         font-family: Arial, sans-serif;
         background-color: #000;
         color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         height: 100vh;
         position: relative;
     }
 
     img {
+        display: block;
         max-width: 90%;
         height: auto;
+        margin: 0 auto;
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
-    button {
+    .button-left, .button-right {
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 15px 40px;
+        transform: translateY(-50%);
+        padding: 15px 30px;
         font-size: 18px;
         background-color: #ffcc00;
         border: none;
@@ -37,14 +35,23 @@
         transition: transform 0.2s, background-color 0.2s;
     }
 
-    button:hover {
-        transform: translate(-50%, -50%) scale(1.05);
+    .button-left:hover, .button-right:hover {
+        transform: translateY(-50%) scale(1.05);
         background-color: #e6b800;
+    }
+
+    .button-left {
+        left: 20px;
+    }
+
+    .button-right {
+        right: 20px;
     }
 </style>
 </head>
 <body>
     <img src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
-    <button onclick="window.location.href='principal.html'">Assista o trailer</button>
+    <button class="button-left" onclick="window.location.href='principal.html'">Assista o trailer</button>
+    <button class="button-right" onclick="window.location.href='principal.html'">Outro botão</button>
 </body>
 </html>
