@@ -22,10 +22,10 @@
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
-    .button-left, .button-right {
+    button {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 20px;       /* distância do topo */
+        left: 20px;      /* distância da esquerda */
         padding: 15px 30px;
         font-size: 18px;
         background-color: #ffcc00;
@@ -35,23 +35,14 @@
         transition: transform 0.2s, background-color 0.2s;
     }
 
-    .button-left:hover, .button-right:hover {
-        transform: translateY(-50%) scale(1.05);
+    button:hover {
+        transform: scale(1.05);
         background-color: #e6b800;
-    }
-
-    .button-left {
-        left: 20px;
-    }
-
-    .button-right {
-        right: 20px;
     }
 </style>
 </head>
 <body>
     <img src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
-    <button class="button-left" onclick="window.location.href='principal.html'">Assista o trailer</button>
-    <button class="button-right" onclick="window.location.href='principal.html'">Outro botão</button>
+    <button onclick="window.location.href='principal.html'">Assista o trailer</button>
 </body>
 </html>
