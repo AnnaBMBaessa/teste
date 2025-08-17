@@ -9,53 +9,40 @@ body {
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
-    overflow: hidden; /* impede rolagem antes de clicar */
-    position: relative;
-    height: 100vh;
 }
 
-/* Imagem full screen */
+/* Imagem que ocupa toda a largura e altura proporcional */
 #background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: 1;
+    width: 100%;
+    height: auto; /* mantém proporção */
+    display: block;
 }
 
 /* Botão sobre a imagem */
 button {
     position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 80px;   /* ajusta a altura do botão */
+    left: 20px;  /* canto superior esquerdo */
     padding: 15px 30px;
     font-size: 18px;
     background-color: #ffcc00;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
     z-index: 2;
 }
 
 button:hover {
-    transform: translate(-50%, -50%) scale(1.05);
     background-color: #e6b800;
 }
 
-/* Conteúdo escondido */
+/* Conteúdo do principal.html */
 #conteudo {
-    display: none; /* começa escondido */
     padding: 50px;
     max-width: 800px;
     margin: 0 auto;
     background-color: #111;
     color: #fff;
-    position: relative;
-    z-index: 3;
 }
 
 #conteudo h1 {
@@ -78,29 +65,21 @@ button:hover {
 </head>
 <body>
 
-<!-- Imagem full screen -->
+<!-- Imagem full width -->
 <img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
 
-<!-- Botão -->
-<button onclick="mostrarConteudo()">Assista o trailer</button>
+<!-- Botão sobre a imagem -->
+<button onclick="document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });">
+Assista o trailer
+</button>
 
-<!-- Conteúdo escondido -->
+<!-- Conteúdo do principal.html -->
 <div id="conteudo">
     <h1>WALL-E: A Terra Que Criamos.</h1>
     <p>Não é cinema — o legado que deixamos é real.</p>
     <iframe src="https://www.youtube.com/embed/WfGMYdalClU" allowfullscreen></iframe>
-    <!-- Coloque aqui todo o restante do conteúdo do principal.html -->
+    <!-- Adicione o restante do conteúdo do principal.html aqui -->
 </div>
-
-<script>
-function mostrarConteudo() {
-    const conteudo = document.getElementById('conteudo');
-    conteudo.style.display = 'block';      // mostra o conteúdo
-    document.body.style.height = 'auto';   // permite rolagem
-    document.body.style.overflow = 'auto'; // habilita scroll
-    conteudo.scrollIntoView({ behavior: 'smooth' });
-}
-</script>
 
 </body>
 </html>
