@@ -7,22 +7,26 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
 }
 
-/* Imagem que ocupa toda a largura e altura proporcional */
+/* Container da imagem */
+#image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Imagem que ocupa toda a largura */
 #background {
     width: 100%;
-    height: auto; /* mantém proporção */
     display: block;
 }
 
 /* Botão sobre a imagem */
 button {
     position: absolute;
-    top: 80px;   /* ajusta a altura do botão */
-    left: 20px;  /* canto superior esquerdo */
+    top: 80px;
+    left: 20px;
     padding: 15px 30px;
     font-size: 18px;
     background-color: #ffcc00;
@@ -36,13 +40,14 @@ button:hover {
     background-color: #e6b800;
 }
 
-/* Conteúdo do principal.html */
+/* Conteúdo do site - escondido inicialmente */
 #conteudo {
     padding: 50px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 50px auto;
     background-color: #111;
     color: #fff;
+    display: none;
 }
 
 #conteudo h1 {
@@ -65,21 +70,31 @@ button:hover {
 </head>
 <body>
 
-<!-- Imagem full width -->
-<img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
+<div id="image-container">
+    <!-- Imagem full width -->
+    <img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
+    
+    <!-- Botão sobre a imagem -->
+    <button onclick="mostrarConteudo()">
+        Assista o trailer
+    </button>
+</div>
 
-<!-- Botão sobre a imagem -->
-<button onclick="document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });">
-Assista o trailer
-</button>
-
-<!-- Conteúdo do principal.html -->
+<!-- Conteúdo do site -->
 <div id="conteudo">
     <h1>WALL-E: A Terra Que Criamos.</h1>
     <p>Não é cinema — o legado que deixamos é real.</p>
     <iframe src="https://www.youtube.com/embed/WfGMYdalClU" allowfullscreen></iframe>
-    <!-- Adicione o restante do conteúdo do principal.html aqui -->
 </div>
+
+<script>
+function mostrarConteudo() {
+    // Mostra o conteúdo
+    document.getElementById('conteudo').style.display = 'block';
+    // Rola suavemente para o conteúdo
+    document.getElementById('conteudo').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
