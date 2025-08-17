@@ -7,6 +7,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #0b0c0f; /* fundo mais escuro pra destacar glow */
+    color: #fff;
 }
 
 /* Container da imagem */
@@ -33,10 +35,13 @@ button {
     border-radius: 8px;
     cursor: pointer;
     z-index: 2;
+    box-shadow: 0 0 20px #ffcc00;
+    animation: pulse 2s infinite;
 }
 
 button:hover {
     background-color: #e6b800;
+    transform: scale(1.05);
 }
 
 /* Conteúdo do site - escondido inicialmente */
@@ -47,10 +52,23 @@ button:hover {
     margin: 50px auto;
     background-color: #111;
     color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.3);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
-#conteudo h1, #conteudo h2 {
-    color: #fff;
+/* Títulos com efeito glow */
+#conteudo h1 {
+    color: #a8ff60;
+    text-align: center;
+    text-shadow: 0 0 5px #a8ff60, 0 0 10px #a8ff60, 0 0 20px #00ff00;
+}
+
+#conteudo h2 {
+    color: #7fff7f;
+    text-shadow: 0 0 3px #7fff7f, 0 0 8px #00ff00;
+    margin-top: 40px;
 }
 
 #conteudo p {
@@ -63,18 +81,65 @@ button:hover {
     height: 400px;
     border: none;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 #conteudo img {
     max-width: 100%;
     margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* Links */
+#conteudo a {
+    color: #a8ff60;
+    text-decoration: none;
+}
+
+#conteudo a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé opcional */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media screen and (max-width: 768px) {
+    #conteudo {
+        padding: 30px;
+        margin: 30px auto;
+    }
+    button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+    #conteudo iframe {
+        height: 250px;
+    }
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #ffcc00; }
+    50% { box-shadow: 0 0 25px #ffcc00; }
+    100% { box-shadow: 0 0 10px #ffcc00; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 </style>
 </head>
 <body>
 
 <div id="image-container">
-    <img id="background" src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
+    <img id="background" src="ATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
     <button onclick="mostrarConteudo()">Assista o trailer</button>
 </div>
 
@@ -89,7 +154,7 @@ button:hover {
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WfGMYdalClU?si=xelzMCA2ZjPieyKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br>
 <br>
-<p>Hoje em dia, com todos os avanços tecnológicos, é fácil pensar que a tecnologia traz somente benefícios, mas não é bem assim. Indústrias poluindo sem dó, lixo eletrônico jogado fora como se não valesse nada, consumo exagerado e desperdício de recursos naturais… tudo isso está acelerando a destruição do planeta, e o mais irônico: as ordens são nossas. Muitas vezes, a tecnologia é usada de forma irresponsável, sem pensar nas consequências futuras, levando a uma situação cada vez mais grave e, o resultado? Um meio ambiente cada vez mais em crise.</p>
+<p>Hoje em dia, com todos os avanços tecnológicos, é fácil pensar que a tecnologia traz somente benefícios, mas não é bem assim. Indústrias poluindo sem dó, lixo eletrônico jogado fora como se não valesse nada, consumo exagerado e desperdício de recursos naturais… tudo isso está acelerando a destruição do planeta, e o mais irônico: as ordens são nossas. Muitas vezes, a tecnologia é usada de forma irresponsável, sem pensar nas consequências futuras, levando a uma situação cada vez mais grave, e o resultado? Um meio ambiente cada vez mais em crise.</p>
 <img src="https://img.freepik.com/vetores-premium/industria-fabril-poluindo-a-cena-da-agua_18591-64080.jpg" alt="fabrica">
 <br>
 <hr>
