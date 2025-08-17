@@ -4,45 +4,26 @@
 <meta charset="UTF-8">
 <title>WALL-E: A Terra Que Criamos</title>
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #000;
-        color: #fff;
-        height: 100vh;
-        position: relative;
-    }
-
-    img {
-        display: block;
-        max-width: 90%;
-        height: auto;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-
-    button {
-        position: absolute;
-        top: 80px;       /* distância do topo */
-        left: 100px;      /* distância da esquerda */
-        padding: 15px 30px;
-        font-size: 18px;
-        background-color: #ffcc00;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: transform 0.2s, background-color 0.2s;
-    }
-
-    button:hover {
-        transform: scale(1.05);
-        background-color: #e6b800;
-    }
+/* Seu CSS aqui */
+button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 </style>
 </head>
 <body>
-    <img src="TrailerATerraQueCriamos.jpg" alt="WALL-E: A Terra Que Criamos">
-    <button onclick="window.location.href='principal.html'">Assista o trailer</button>
+<img src="TrailerATerraQueCriamos.jpg" alt="WALL-E">
+<button onclick="document.getElementById('conteudo').scrollIntoView();">
+Assista o trailer
+</button>
+
+<!-- Conteúdo do principal.html -->
+<div id="conteudo">
+<h1>WALL-E: A Terra Que Criamos.</h1>
+<p>Não é cinema — o legado que deixamos é real.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WfGMYdalClU"></iframe>
+<!-- Todo o restante do conteúdo do principal.html -->
+</div>
 </body>
 </html>
